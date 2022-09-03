@@ -1,4 +1,4 @@
-﻿# Dataset
+# Dataset
 ## Segmentation
 We used mainly 2 dataset for segmentation problem Retinal fundus images for glaucoma analysis (RIGA) [1], and Retinal Fundus Glaucoma Challenge Edition2 (REFUGE2) [2].
 ### RIGA
@@ -368,6 +368,11 @@ Thus, we reached the highest valid results with 97% and auc score with 88% after
  </tr>
 </table>
 
+<br/>
+<br/>
+
+
+# Resources
 [1]: Almazroa, A., Alodhayb, S., Osman, E., Ramadan, E., Hummadi, M., Dlaim, M. & Lakshminarayanan, V. (2018, March). Retinal fundus images for glaucoma analysis: the RIGA dataset. In *Medical Imaging 2018: Imaging Informatics for Healthcare, Research, and Applications* (Vol. 10579, p. 105790B). International Society for Optics and Photonics.
 
 [2]\: https://ai.baidu.com/broad/introduction?dataset=gon
