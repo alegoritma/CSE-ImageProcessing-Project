@@ -1,3 +1,32 @@
+# Method
+Our first trials for finding optic disc and cup areas, consisted of couple deterministic approaches like finding threshold adaptively and applying multi-otsu, which is shown in the figure below, but we needed a more generic and easily testable method. Source code can be reached via this [link](https://github.com/alegoritma/CSE-ImageProcessing-Project/blob/main/OpticDiscThresholding.ipynb).
+
+![](media/otsu.png)
+
+Therefore we decided to use deep neural network models which were specified for segmentation problems.
+
+Since unbalanced label distribution affects the success of a deep neural network model, we wanted to separate this problem into localization of the optic disc, and then solving segmentation problems at the cropped area. After segmentation, the next step is extracting metrics for recognition, which consists of C/D ratio and peripapillary features.
+
+
+Thereby, problem consists of three steps:
+1.	Localization of optic disc
+2.	Segmentation of optic disc and cup
+3.	Recognition of Glaucoma
+
+![](media/steps.png)
+
+## Localization of Optic Disc
+Since fundus photographs are taken with different cameras with a variety of qualities and a great variety of image exposures, we decided to approach this task as a semantic problem where attributes of an optic disc in fundus photography should be seen as high level feature, especially considering how much other pathologies may cause confusions for our methods. Therefore, we wanted to extract these features with a deep neural network model, and due to scarcity of our labeled data, we wanted to make use of a transfer learning approach where we start to train a model with its weights used for another problem.
+
+## Segmentation of Optic Disc and Cup
+Due to the nature of the optic cup, there is an ambiguity in deciding where its borders start or end, and this ambiguity can also easily be seen when two annotations of same fundus photography are juxtaposed. In the figure shown below, two annotations drawn (annot. 1 and 2) by two different professional opthamologists. For this reason we wanted to train a deep neural network model for extracting those high-level features belonging to optic cups.
+
+![](media/samples.png)
+
+## Recognition
+After segmentation extracted from the cropped fundus image, pixels belonging to cup and disc will be counted to find cup to disc ratio and decide if the patient has a chance to have glaucoma or not.
+
+
 # Dataset
 ## Segmentation
 We used mainly 2 dataset for segmentation problem Retinal fundus images for glaucoma analysis (RIGA) [1], and Retinal Fundus Glaucoma Challenge Edition2 (REFUGE2) [2].
