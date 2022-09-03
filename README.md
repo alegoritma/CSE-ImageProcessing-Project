@@ -89,7 +89,7 @@ def scc_dice_cdr_loss(y_true, y_pred):
 
 After a couple trials, we found out that we are obtaining best results when we combine categorical cross entropy and dice loss with the cup to disc loss and we took the best results with the U-Net model. Final result shown in figure below. 
 
-![](media/image3.png.png)
+![](media/image3.png)
 
 First, we trained the unet model without any preprocessing and we had a 85% auc score, but only 90% of our predictions were valid due to bad mask prediction.
 
